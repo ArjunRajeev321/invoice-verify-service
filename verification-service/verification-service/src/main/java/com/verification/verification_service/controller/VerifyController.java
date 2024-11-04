@@ -35,7 +35,9 @@ public class VerifyController {
 
 	private boolean isEvenRandom(int maxBound) throws Exception {
 		Random random = new Random();
-		return random.ints(1, maxBound).anyMatch(number -> number % 2 == 0);
+		int x = random.nextInt(100);
+		IntPredicate check = number -> number % 2 == 0;
+		return check.test(x);
 	}
 
 }
